@@ -1,27 +1,26 @@
 import React from 'react'
 import logoEliminar from "../img/eliminar.png"
 
-const Tarjeta = () => {
+const Tarjeta = ({name, number, exp , segurity, cardType, cardList, deleteCard}) => {
 
- 
-
+  
   
   return (
     <>
       <li className="tarjeta">
         <div className="logo-eliminar">
-          <img src="" alt="logo" /> <div ><img src={logoEliminar} height={25} width={25} alt="" /></div>
+          <img src="" alt="logo" /> <div className='tachito' onClick={deleteCard}><img src={logoEliminar} height={25} width={25} alt="" /></div>
         </div>
         <div className="number">
-          <button type='button'>ojo</button><p>xxxx-xxxx-xxxx-xxxx</p>
+          <button type='button'>ojo</button><p>{number}</p>
         </div>
-        <p className='nombre'>Nombre completo</p>
+        <p className='nombre'>{name}</p>
         <div className="venc-clav">
           <div>
-            <span>hasta</span><span>xx/xx</span>  
+            <span>vence</span><span>{exp}</span>  
           </div>
           <div>
-            XXX
+            {segurity}
           </div>
         </div>
       </li>

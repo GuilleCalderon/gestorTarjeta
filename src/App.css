@@ -31,7 +31,7 @@ hr {
 
 .tarjeta {
   margin-top: 2rem;
-  width: 100%;
+  width: 344px;
   max-width: 344px;
   height: 215px;
   background-color: aqua;
@@ -80,4 +80,7 @@ input[type="number"] {
 }
 ul {
   padding: 0;
+}
+.tachito:hover {
+  cursor: pointer;
 }
