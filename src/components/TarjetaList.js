@@ -1,21 +1,27 @@
-import React from 'react'
+import React, { useState } from "react";
+import { useModal } from "../hooks/useModal";
+import ModalEliminar from "./ModalEliminar";
+import Tarjeta from "./Tarjeta";
 
-import Tarjeta from './Tarjeta'
-
-const TarjetaList = ({cardList,deleteCard,openModal,isOpen,closeModal}) => {
-
-  
-
+const TarjetaList = ({ cardList, deleteCard }) => {
   return (
-    <section className='tarjeta-container'>
+    <section className="tarjeta-container">
       <ul>
-        {cardList.map((card,i)=> <Tarjeta isOpen={isOpen} closeModal={closeModal} openModal={openModal} deleteCard={()=> deleteCard(i)} id={i} key={card.number.toString()} name={card.name} number={card.number} exp={card.exp} segurity={card.segurity} cardType={card.cardType}>
-        
-        
-        </Tarjeta>)}
+        {cardList.map((card, i) => (
+          <Tarjeta
+            deleteCard={() => deleteCard(i)}
+            indice={i}
+            key={card.number.toString()}
+            name={card.name}
+            number={card.number}
+            exp={card.exp}
+            segurity={card.segurity}
+            cardType={card.cardType}
+          ></Tarjeta>
+        ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default TarjetaList
+export default TarjetaList;

@@ -1,18 +1,22 @@
-import React from 'react'
-import "./ModalEliminar.css"
+import React from "react";
+import "./ModalEliminar.css";
 
-const ModalEliminar = ({children, isOpen, closeModal}) => {
-
-  const handleModalContainerClick= e => e.stopPropagation()
+const ModalEliminar = ({ children, isOpen, closeModal }) => {
+  const handleModalContainerClick = (e) => e.stopPropagation();
 
   return (
-    <article className= {`modal ${isOpen && "is-open"}`} >
-      <div className="modal-container" onClick={handleModalContainerClick}>
-        <button className="modal-close" onClick={closeModal}>X</button>
+    <article className={`modal-eliminar ${isOpen && "is-open-eliminar"}`}>
+      <div
+        className="modal-container-eliminar"
+        onClick={handleModalContainerClick}
+      >
         {children}
+        <button type="button" className="btn-no" onClick={closeModal}>
+          No
+        </button>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default ModalEliminar
+export default ModalEliminar;
