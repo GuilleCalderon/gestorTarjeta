@@ -72,6 +72,7 @@ const FormularioTarjeta = ({addToCardList,closeModal}) => {
       name='name' 
       value={form.name} 
       onChange={handleChange}
+      required
       /><br /><br />
 
       <input 
@@ -80,6 +81,7 @@ const FormularioTarjeta = ({addToCardList,closeModal}) => {
       name='number' 
       value={form.number} 
       onChange={handleChange}
+      required
       /><br /><br />
 
       <input 
@@ -88,14 +90,16 @@ const FormularioTarjeta = ({addToCardList,closeModal}) => {
       name='exp' 
       value={form.exp} 
       onChange={handleChange}
+      required
       /><br /><br />
-      
+
       <input 
       type="number" 
       placeholder='Codigo de seguridad' 
       name='segurity' 
       value={form.segurity} 
       onChange={handleChange}
+      required
       /><br /><br />
 
       <button type='submit'>Crear</button>

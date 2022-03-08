@@ -4,11 +4,14 @@ import Modal from './components/Modal';
 import FormularioTarjeta from './components/FormularioTarjeta';
 import TarjetaList from './components/TarjetaList';
 import { useState } from 'react';
+import ModalEliminar from './components/ModalEliminar';
+
 
 function App() {
 
   
   const [isOpenModal, openModal ,closeModal] = useModal(false)
+  const [isOpenModalEliminar, openModalEliminar, closeModalEliminar] = useModal(false)
   const [cardList, setCardList] = useState([])
 
   const addToCardList = (card) => {
@@ -16,12 +19,11 @@ function App() {
   }
 
   const deleteCard = (index) => {
+    
     const newCardList = cardList
     newCardList.splice(index,1)
     setCardList([...newCardList])
   } 
-
-
 
   return (
     <>
@@ -36,11 +38,15 @@ function App() {
 
     </Modal>
     <hr />
-    {cardList.length === 0 && <p className='header'>“No tienes tarjetas aún, agrega una para simplificar tus pagos”</p> }
-    <TarjetaList cardList={cardList} deleteCard={deleteCard}/>
-
     
-      
+    {cardList.length === 0 && <p className='header'>“No tienes tarjetas aún, agrega una para simplificar tus pagos”</p> }
+    <TarjetaList isOpen={isOpenModalEliminar} closeModal={closeModalEliminar} openModal={openModalEliminar} setCardList ={setCardList} cardList={cardList} deleteCard={deleteCard} />
+
+    <ModalEliminar isOpen={isOpenModalEliminar} closeModal={closeModalEliminar}>
+          <p>Seguro desea eliminar Tarjeta terminada en {cardList.number}</p>
+          <button type='button' onClick={deleteCard}>Aceptar</button> 
+    </ModalEliminar>
+
     </>
   );
 }
