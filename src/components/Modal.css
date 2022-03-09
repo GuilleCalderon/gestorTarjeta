@@ -16,6 +16,9 @@
 }
 
 .modal-container {
+  border-radius: 24px;
+  font-weight: bold;
+  color: grey;
   padding: 1rem;
   position: relative;
   width: 100%;
@@ -24,11 +27,47 @@
   min-height: 200 px;
   max-height: 600px;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: rgb(175, 228, 252);
 }
 
 .modal-close {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  background: none;
+  font-weight: bold;
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+.modal-close:hover {
+  color: beige;
+  background-color: grey;
+  cursor: pointer;
+}
+.validation {
+  font-size: small;
+  margin: 0;
+  font-weight: bold;
+  color: #dc3545;
+}
+.titulo-form {
+  font-size: x-large;
+}
+
+.btn-submit {
+  color: grey;
+  border-radius: 24px;
+  height: 2rem;
+  background: none;
+
+  height: 2rem;
+  font-weight: bold;
+
+  font-size: medium;
+}
+.btn-submit:hover {
+  color: beige;
+  background-color: grey;
+  cursor: pointer;
 }

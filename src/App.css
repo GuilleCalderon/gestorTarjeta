@@ -80,7 +80,16 @@ hr {
 }
 input[type="text"],
 input[type="number"] {
+  background: none;
+  border-radius: 12px;
+  height: 1.5rem;
+  font-weight: bold;
+  margin: 1rem;
+  font-size: medium;
   width: 90%;
+}
+::placeholder {
+  color: grey;
 }
 ul {
   padding: 0;
@@ -91,6 +100,7 @@ ul {
 
 .hasta {
   font-size: x-small;
+  vertical-align: text-top;
 }
 .security {
   font-size: 20px;
