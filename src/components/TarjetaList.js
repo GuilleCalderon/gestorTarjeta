@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import { useModal } from "../hooks/useModal";
-import ModalEliminar from "./ModalEliminar";
 import Tarjeta from "./Tarjeta";
 
 const TarjetaList = ({ cardList, deleteCard }) => {
