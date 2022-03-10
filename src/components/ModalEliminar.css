@@ -16,9 +16,6 @@
 }
 
 .modal-container-eliminar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 14px;
   padding: 1rem;
   position: relative;
@@ -40,8 +37,8 @@
   color: white;
   background: none;
   font-weight: bold;
-
-  margin-top: 0;
+  width: 100%;
+  margin-top: 3rem;
 }
 .btn-si,
 .btn-no {

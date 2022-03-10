@@ -1,6 +1,6 @@
 import Tarjeta from "./Tarjeta";
 
-const TarjetaList = ({ cardList, deleteCard }) => {
+const TarjetaList = ({ cardList, deleteCard, closeModal }) => {
   return (
     <section className="tarjeta-container">
       <ul>

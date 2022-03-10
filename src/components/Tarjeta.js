@@ -85,7 +85,7 @@ const Tarjeta = ({
                 <img
                   src={ojo ? ojoOn : ojoOff}
                   alt=""
-                  width={30}
+                  width={29}
                   className="ojo"
                 />
               </div>
