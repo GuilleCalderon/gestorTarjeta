@@ -70,6 +70,7 @@ const Tarjeta = ({
               {number[0] === "3" && (
                 <img src={amexLogo} width={60} alt="logo" />
               )}
+              <p className="cardType">{cardType}</p>
               <div
                 className="tachito"
                 onClick={() => {

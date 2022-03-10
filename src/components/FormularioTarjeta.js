@@ -72,11 +72,11 @@ const FormularioTarjeta = ({ addToCardList, closeModal }) => {
         onClick={handleRatio}
         type="radio"
         name="elegi"
-        id="credito"
+        id="Credito"
         defaultChecked={true}
       />
       Credito
-      <input onClick={handleRatio} type="radio" name="elegi" id="debito" />
+      <input onClick={handleRatio} type="radio" name="elegi" id="Debito" />
       Debito
       <br />
       <br />
