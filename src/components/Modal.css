@@ -27,7 +27,7 @@
   min-height: 200 px;
   max-height: 600px;
   overflow-y: auto;
-  background-color: rgb(175, 228, 252);
+  background-color: #b8f4fe;
 }
 
 .modal-close {
