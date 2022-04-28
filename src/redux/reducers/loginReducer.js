@@ -2,12 +2,14 @@ import {
   LOGIN_USER_WITH_EMAIL_PASSWORD_ERROR,
   LOGIN_USER_WITH_EMAIL_PASSWORD_SUCCESS,
   LOGIN_USER_WITH_EMAIL_PASSWORD_PENDING,
+  LOG_OUT,
 } from "../types";
 
 const initialState = {
   loading: false,
   user: null,
   error: null,
+  login: false,
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -24,12 +26,20 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         user: action.user,
+        login: true,
       };
     case LOGIN_USER_WITH_EMAIL_PASSWORD_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error,
+      };
+    case LOG_OUT:
+      console.log("LOG_OUT");
+      return {
+        ...state,
+        user: null,
+        login: false,
       };
     default:
       return state;

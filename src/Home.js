@@ -1,5 +1,5 @@
 import { useModal } from "./hooks/useModal";
-import { useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import Modal from "./components/Modal";
 import FormularioTarjeta from "./components/FormularioTarjeta";
@@ -8,6 +8,7 @@ import { useState } from "react";
 import Login from "./components/Login";
 import { getAuth, signOut } from "firebase/auth";
 import firebaseApp from "./utils/firebaseConfig";
+import { logOut } from "./redux/actions/actions";
 
 const auth = getAuth(firebaseApp);
 
@@ -26,18 +27,20 @@ function App() {
     setCardList([...newCardList]);
   };
 
-  const user = useSelector((state) => state.user);
-  console.log(user);
+  const dispatch = useDispatch();
+
+  const login = useSelector((state) => state.login, shallowEqual);
 
   return (
     <>
-      {user ? (
+      {login ? (
         <>
           <div className="header">
             <button
               type="button"
               onClick={() => {
                 signOut(auth);
+                dispatch(logOut());
               }}
             >
               Log Out

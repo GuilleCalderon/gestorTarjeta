@@ -1,4 +1,6 @@
 //tipo de acciones
+export const LOG_OUT = "LOG_OUT";
+
 export const LOGIN_USER_WITH_EMAIL_PASSWORD_PENDING =
   "LOGIN_USER_WITH_EMAIL_PASSWORD_PENDING";
 
