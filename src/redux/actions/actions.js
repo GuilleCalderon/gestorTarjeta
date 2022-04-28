@@ -2,11 +2,11 @@ import {
   LOGIN_USER_WITH_EMAIL_PASSWORD,
   LOGIN_USER_WITH_EMAIL_PASSWORD_ERROR,
   LOGIN_USER_WITH_EMAIL_PASSWORD_SUCCESS,
-  SET_LOADING_LOGIN,
+  LOGIN_USER_WITH_EMAIL_PASSWORD_PENDING,
 } from "../types";
 
 export const setLoadingLoginAction = () => ({
-  type: SET_LOADING_LOGIN,
+  type: LOGIN_USER_WITH_EMAIL_PASSWORD_PENDING,
 });
 
 export const loginUserWithEmailPasswordAction = (email, password) => {

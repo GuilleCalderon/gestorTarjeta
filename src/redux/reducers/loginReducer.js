@@ -1,7 +1,7 @@
 import {
-  LOGIN_USER_WITH_EMAIL_PASSWORD,
   LOGIN_USER_WITH_EMAIL_PASSWORD_ERROR,
   LOGIN_USER_WITH_EMAIL_PASSWORD_SUCCESS,
+  LOGIN_USER_WITH_EMAIL_PASSWORD_PENDING,
 } from "../types";
 
 const initialState = {
@@ -12,7 +12,8 @@ const initialState = {
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_USER_WITH_EMAIL_PASSWORD:
+    case LOGIN_USER_WITH_EMAIL_PASSWORD_PENDING:
+      console.log("LOGIN_USER_WITH_EMAIL_PASSWORD_PENDING");
       return {
         ...state,
         loading: true,
@@ -34,5 +35,4 @@ const loginReducer = (state = initialState, action) => {
       return state;
   }
 };
-
 export default loginReducer;

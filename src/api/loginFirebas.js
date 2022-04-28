@@ -7,6 +7,7 @@ export const handlerLogin = async (e) => {
   e.preventDefault();
   const email = e.target.email.value;
   const password = e.target.password.value;
-  const usuario = await signInWithEmailAndPassword(auth, email, password);
-  console.log(usuario);
+  const user = await signInWithEmailAndPassword(auth, email, password);
+  console.log(user);
+  return user;
 };
