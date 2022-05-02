@@ -1,5 +1,5 @@
 import { useModal } from "./hooks/useModal";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import Modal from "./components/Modal";
 import FormularioTarjeta from "./components/FormularioTarjeta";
@@ -15,7 +15,7 @@ const auth = getAuth(firebaseApp);
 function App() {
   const [isOpenModal, openModal, closeModal] = useModal(false);
 
-  const [cardList, setCardList] = useState([]);
+  /*   const [cardList, setCardList] = useState([]);
 
   const addToCardList = (card) => {
     setCardList([...cardList, card]);
@@ -25,15 +25,16 @@ function App() {
     const newCardList = cardList;
     newCardList.splice(indice, 1);
     setCardList([...newCardList]);
-  };
+  }; */
 
   const dispatch = useDispatch();
 
-  const login = useSelector((state) => state.login, shallowEqual);
+  const user = useSelector((state) => state.login.user);
+  const card = useSelector((state) => state.cards.card);
 
   return (
     <>
-      {login ? (
+      {user ? (
         <>
           <div className="header">
             <button
@@ -54,21 +55,21 @@ function App() {
           </div>
           <Modal isOpen={isOpenModal} closeModal={closeModal}>
             <FormularioTarjeta
-              addToCardList={addToCardList}
+              /* addToCardList={addToCardList} */
               closeModal={closeModal}
             />
           </Modal>
           <hr />
 
-          {cardList.length === 0 && (
+          {/*  {card === 0 && (
             <p className="header">
               “No tienes tarjetas aún, agrega una para simplificar tus pagos”
             </p>
-          )}
+          )} */}
           <TarjetaList
-            setCardList={setCardList}
-            cardList={cardList}
-            deleteCard={deleteCard}
+          /* setCardList={setCardList} */
+          /* cardList={cardList}
+            deleteCard={deleteCard} */
           />
         </>
       ) : (

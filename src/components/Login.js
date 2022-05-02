@@ -4,7 +4,7 @@ import { loginUserWithEmailPasswordAction } from "../redux/actions/actions";
 
 const Login = () => {
   const dispatch = useDispatch();
-  <div className=""></div>;
+
   return (
     <>
       <h2>Inicia Sesion</h2>

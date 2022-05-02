@@ -8,6 +8,6 @@ export const handlerLogin = async (e) => {
   const email = e.target.email.value;
   const password = e.target.password.value;
   const user = await signInWithEmailAndPassword(auth, email, password);
-  console.log(user);
+
   return user;
 };

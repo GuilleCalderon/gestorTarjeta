@@ -1,7 +1,7 @@
 import reducer from "../reducers";
 import { applyMiddleware, createStore as createReduxStore } from "redux";
 import createSagaMiddleware from "redux-saga";
-import loginUserWithEmailPasswordWatcher from "../sagas";
+import loginUserWithEmailPasswordWatcher from "../sagasAuth";
 
 const sagaMiddleware = createSagaMiddleware();
 

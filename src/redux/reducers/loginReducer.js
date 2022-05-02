@@ -9,7 +9,6 @@ const initialState = {
   loading: false,
   user: null,
   error: null,
-  login: false,
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -26,7 +25,6 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         user: action.user,
-        login: true,
       };
     case LOGIN_USER_WITH_EMAIL_PASSWORD_ERROR:
       return {
@@ -39,7 +37,6 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         user: null,
-        login: false,
       };
     default:
       return state;

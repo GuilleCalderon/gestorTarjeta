@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addCardAction } from "../redux/actions/actions";
 
-const initialForm = {
+export const initialForm = {
   cardType: "credito",
   number: "",
   name: "",
@@ -30,7 +32,7 @@ const validateForm = (form) => {
   return errors;
 };
 
-const FormularioTarjeta = ({ addToCardList, closeModal }) => {
+const FormularioTarjeta = ({ /* addToCardList, */ closeModal }) => {
   const [form, setForm] = useState(initialForm);
 
   const [errors, setErrors] = useState({});
@@ -55,7 +57,7 @@ const FormularioTarjeta = ({ addToCardList, closeModal }) => {
     setErrors(validateForm(form));
   };
 
-  const handleSubmit = (e) => {
+  /* const handleSubmit = (e) => {
     e.preventDefault();
 
     addToCardList(form);
@@ -63,10 +65,22 @@ const FormularioTarjeta = ({ addToCardList, closeModal }) => {
     closeModal();
 
     setForm(initialForm);
-  };
+  }; */
+
+  const dispatch = useDispatch();
 
   return (
-    <form className="formulario" onSubmit={handleSubmit}>
+    <form
+      className="formulario"
+      onSubmit={(e) => {
+        e.preventDefault();
+        dispatch(addCardAction(form));
+
+        closeModal();
+
+        setForm(initialForm);
+      }}
+    >
       <p className="titulo-form">Datos de su nueva tarjeta a cargar:</p>
       <input
         onClick={handleRatio}

@@ -1,10 +1,12 @@
+import { useSelector } from "react-redux";
 import Tarjeta from "./Tarjeta";
 
-const TarjetaList = ({ cardList, deleteCard, closeModal }) => {
+const TarjetaList = ({ /* cardList, */ deleteCard }) => {
+  const card = useSelector((state) => state.cards.card);
   return (
     <section className="tarjeta-container">
       <ul>
-        {cardList.map((card, i) => (
+        {card?.map((card, i) => (
           <Tarjeta
             deleteCard={() => deleteCard(i)}
             indice={i}
