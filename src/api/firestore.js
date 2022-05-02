@@ -6,7 +6,7 @@ const firestore = getFirestore(firebaseApp);
 
 export const searchDocOrCreateDoc = async (idDocumento) => {
   //crear referencia al documento
-  const docRef = firestore.collection("tarjetas").doc(idDocumento);
+  const docRef = firestore.collection("cards").doc(idDocumento);
 
   //buscar el documento
 
@@ -15,11 +15,11 @@ export const searchDocOrCreateDoc = async (idDocumento) => {
   if (!consulta) {
     const newDoc = await setDoc(docRef, {
       idDocumento,
-      nombre: "",
-      numero: "",
-      cvv: "",
-      vencimiento: "",
-      tipo: "",
+      cardType: "credito",
+      number: "",
+      name: "",
+      exp: "",
+      segurity: "",
     });
     return newDoc;
   }
